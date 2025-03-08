@@ -55,6 +55,7 @@ class EmployeeRepositoryTest {
     void testFindByEmail_whenEmailIsNotFound_thenReturnOptionalEmpty() {
 //        Given
         String email = "notPresent@test.com";
+
 //        When
         Optional<Employee> byEmail = employeeRepository.findByEmail(email);
 
