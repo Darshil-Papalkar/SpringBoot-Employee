@@ -21,7 +21,4 @@ public class Employee {
     private String email;
 
     private Long salary;
-
-    @ManyToOne
-    private Department department;
 }
