@@ -8,13 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 @Import(TestContainerConfiguration.class)
@@ -32,6 +30,7 @@ class EmployeeRepositoryTest {
                 .name("Darshil")
                 .email("darshil@test.com")
                 .salary(100L)
+                .department(null)
                 .build();
     }
 
@@ -45,8 +44,9 @@ class EmployeeRepositoryTest {
         Optional<Employee> byEmail = employeeRepository.findByEmail(employee.getEmail());
 
 //        Assert, Then
-        assertThat(byEmail).isNotNull();
-        assertThat(byEmail).isNotEmpty();
+        assertThat(byEmail)
+                .isNotNull()
+                .isNotEmpty();
         assertThat(byEmail.isPresent()).isTrue();
         assertThat(byEmail.get().getEmail()).isEqualTo(employee.getEmail());
     }
@@ -60,8 +60,9 @@ class EmployeeRepositoryTest {
         Optional<Employee> byEmail = employeeRepository.findByEmail(email);
 
 //        Then
-        assertThat(byEmail).isNotNull();
-        assertThat(byEmail).isEmpty();
+        assertThat(byEmail)
+                .isNotNull()
+                .isEmpty();
         assertThat(byEmail.isPresent()).isFalse();
     }
 }
