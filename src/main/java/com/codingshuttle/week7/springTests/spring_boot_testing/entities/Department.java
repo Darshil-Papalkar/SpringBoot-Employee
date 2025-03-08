@@ -22,6 +22,8 @@ public class Department {
     @OneToMany(mappedBy = "department")
     private List<Employee> employee;
 
+    public Department() {}
+
     public Department(String dptTitle) {
         this.dptTitle = dptTitle;
     }
