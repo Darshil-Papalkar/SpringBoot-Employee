@@ -1,9 +1,8 @@
 package com.codingshuttle.week7.springTests.spring_boot_testing.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Department {
@@ -14,4 +13,6 @@ public class Department {
 
     private String dptTitle;
 
+    @OneToMany(mappedBy = "department")
+    private List<Employee> employee;
 }
