@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.codingshuttle.week7.springTests</groupId>
 	<artifactId>spring-boot-testing</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${revision}</version>
 	<name>spring-boot-testing</name>
 	<description>Demo project for Spring Boot Testing</description>
 	<url/>
@@ -27,6 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
+		<revision>0.0.1-SNAPSHOT</revision>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
