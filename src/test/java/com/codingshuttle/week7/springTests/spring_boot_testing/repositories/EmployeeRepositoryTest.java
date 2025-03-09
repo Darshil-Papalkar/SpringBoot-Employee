@@ -30,7 +30,6 @@ class EmployeeRepositoryTest {
                 .name("Darshil")
                 .email("darshil@test.com")
                 .salary(100L)
-                .department(null)
                 .build();
     }
 
