@@ -6,7 +6,6 @@ import com.codingshuttle.week7.springTests.spring_boot_testing.entities.Employee
 import com.codingshuttle.week7.springTests.spring_boot_testing.exceptions.ResourceNotFoundException;
 import com.codingshuttle.week7.springTests.spring_boot_testing.repositories.EmployeeRepository;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -54,7 +53,6 @@ class EmployeeServiceImplTest {
         employeeDto = modelMapper.map(employee, EmployeeDto.class);
     }
 
-    @Disabled
     @Test
     void testGetEmployeeById_whenEmployeeIdIsPresent_thenReturnEmployeeDto() {
         Long id = 1L;
@@ -73,7 +71,6 @@ class EmployeeServiceImplTest {
         verify(employeeRepository, atMost(5)).findById(id);
     }
 
-    @Disabled
     @Test
     void testGetEmployeeById_whenEmployeeIsNotPresent_thenThrowException() {
         when(employeeRepository.findById(anyLong()))

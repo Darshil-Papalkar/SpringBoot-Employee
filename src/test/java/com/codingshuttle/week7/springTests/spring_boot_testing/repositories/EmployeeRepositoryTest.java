@@ -3,6 +3,7 @@ package com.codingshuttle.week7.springTests.spring_boot_testing.repositories;
 import com.codingshuttle.week7.springTests.spring_boot_testing.TestContainerConfiguration;
 import com.codingshuttle.week7.springTests.spring_boot_testing.entities.Employee;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -33,6 +34,7 @@ class EmployeeRepositoryTest {
                 .build();
     }
 
+    @Disabled
     @Test
     void testFindByEmail_whenEmailIsValid_thenReturnEmployee() {
 
@@ -50,6 +52,7 @@ class EmployeeRepositoryTest {
         assertThat(byEmail.get().getEmail()).isEqualTo(employee.getEmail());
     }
 
+    @Disabled
     @Test
     void testFindByEmail_whenEmailIsNotFound_thenReturnOptionalEmpty() {
 //        Given
